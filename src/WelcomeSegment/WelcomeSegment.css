@@ -1,0 +1,39 @@
+h3 {
+    font-size: 16px;
+    margin-top: 15px;
+}
+.loginScreen-input {
+    display: flex;
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.loginScreen-input form {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: nowrap;
+    min-height: 50px;
+}
+.loginScreen-input > form > input {
+    padding: 15px;
+    outline: none;
+    border: none;
+    width: 60%;
+    max-width: 600px;
+    height: 40px;
+}
+.loginScreen-getStarted {
+    padding: 10px 20px;
+    height: 40px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: #e50914;
+    font-weight: 400;
+    cursor: pointer;
+    text-overflow: none;
+}

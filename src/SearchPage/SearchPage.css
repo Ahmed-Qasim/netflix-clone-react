@@ -1,0 +1,31 @@
+.SearchPage {
+    height: 100%;
+    background-color: black;
+    width: 100%;
+    display: absolute;
+    align-items: center;
+}
+.search {
+    width: 90%;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+.search input {
+    outline: none;
+    width: 90%;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+}
+.search button {
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.search-posters {
+    overflow-y: scroll;
+}

@@ -1,0 +1,94 @@
+.loginScreen {
+    width: 100%;
+    position: relative;
+    height: 100%;
+    background: url(../src/assets/images/14.png) center no-repeat;
+    background-size: cover;
+}
+.loginScreen-topContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    width: 100%;
+}
+
+.loginScreen-logo {
+    width: 120px;
+    padding-left: 20px;
+}
+.loginScreen-topContainer>.loginScreen-signIn-btn {
+    margin-right: 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #e50914;
+    padding: 8px 35px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.loginScreen-gradient {
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.7) 0,
+        rgba(0, 0, 0, 0) 60%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+}
+
+.loginScreen-body {
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+}
+h2 {
+    font-size: 17px;
+    margin-top: 15px;
+    font-weight: 400;
+}
+/* h3 {
+    font-size: 16px;
+    margin-top: 15px;
+}
+.loginScreen-input {
+    display: flex;
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.loginScreen-input form {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: nowrap;
+    min-height: 50px;
+}
+.loginScreen-input > form > input {
+    padding: 15px;
+    outline: none;
+    border: none;
+    width: 60%;
+    max-width: 600px;
+    height: 40px;
+}
+.loginScreen-getStarted {
+    padding: 10px 20px;
+    height: 40px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: #e50914;
+    font-weight: 400;
+    cursor: pointer;
+    text-overflow: none;
+} */

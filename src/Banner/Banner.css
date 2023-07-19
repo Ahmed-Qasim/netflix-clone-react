@@ -1,0 +1,97 @@
+.banner {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    color: white;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.banner_content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    background-image: linear-gradient(
+        to right,
+        transparent,
+        rgba(0, 0, 0, 1) 0,
+        rgba(0, 0, 0, 0.7) 40%,
+        rgba(0, 0, 0, 0.4) 70%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    cursor: pointer;
+}
+/* .shadow {
+    max-width: 450px;
+    padding: 0 10px;
+} */
+.banner_title {
+    font-weight: 900;
+    font-size: 35px;
+    padding-bottom: 15px;
+}
+.banner_button {
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 130px;
+    color: white;
+    margin-right: 15px;
+    padding: 5px 20px;
+    font-weight: 700;
+    background-color: rgb(51, 51, 51, 0.5);
+}
+.play {
+    color: black;
+    background-color: white;
+}
+.banner_button:hover {
+    background-color: white;
+    color: black;
+    transition: 0.2s all;
+}
+
+.banner_description {
+    max-width: 500px;
+    font-size: 19px;
+    padding-top: 23px;
+    list-style: 1.3;
+    height: 100px;
+    color: white;
+    /* word-wrap:break-word; */
+}
+.banner_button.myList{
+width: 150px;
+padding: 5px 20px;
+}
+.banner--fadeBottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 71px;
+    background-image: linear-gradient(
+        180deg,
+        transparent,
+        rgba(37, 37, 37, 0.61),
+        #111
+    );
+}
+i {
+    position: relative;
+    color: aliceblue;
+    font-size: 20px;
+    margin-right: 5px;
+}
+.banner_button.play i {
+    color: black;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.banner_button.myList:hover i {
+    color: black;
+}

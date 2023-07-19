@@ -1,0 +1,68 @@
+.moviePage {
+    background-color: black;
+    color: white;
+    height: 100%;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.moviePage-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(20, 20, 20);
+    padding: 20px 10px;
+    border-radius: 7px;
+    width: 95%;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.posterImg {
+    max-width: 100%;
+    text-align: center;
+    border-radius: 10px;
+}
+.rightSide {
+    max-width: 70%;
+}
+.rightSide > h1 {
+    color: #e50914;
+}
+.leftSide {
+    text-align: center;
+    max-width: 275px;
+}
+
+.rightSide.bi {
+    color: #e50914;
+}
+.player {
+    width: 95%;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 7px;
+    padding: 30px 15px;
+    background-color: rgb(20, 20, 20);
+    margin-bottom: 5px;
+}
+.player > h1 {
+    text-align: center;
+}
+.youtube-container {
+    width: 80%;
+    height: 0;
+    padding-bottom: 56.25%; /* Maintain a 16:9 aspect ratio (height/width * 100%) */
+    position: relative;
+    margin: auto;
+}
+
+.youtube-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+}

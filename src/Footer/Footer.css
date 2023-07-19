@@ -1,0 +1,36 @@
+.footer {
+    width: 100%;
+    padding: 15px;
+    border-top: 2px solid rgb(20, 20, 20);
+    font-weight: bold;
+    background-color: black;
+}
+
+.footer,
+.footer a {
+    color: #999999;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.footer .footer-cols {
+    display: flex;
+    grid-gap: 30px;
+    justify-content: space-around;
+}
+.footer ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.footer li {
+    list-style: none;
+}
+.footer a:hover {
+    color: white;
+}
