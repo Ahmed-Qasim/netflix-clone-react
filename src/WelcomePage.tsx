@@ -1,11 +1,9 @@
-
-import "./WelcomePage.css";
+import "./welcome-page.css";
 import "./SigninPage/SignInScreen";
 import SignInScreen from "./SigninPage/SignInScreen";
 import { useSelector } from "react-redux";
 import { selectUser } from "./state/userSlice";
 import { Navigate } from "react-router-dom";
-
 
 function WelcomePage() {
     const user = useSelector(selectUser);
