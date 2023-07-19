@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./MoviePage.css";
 import { useParams } from "react-router-dom";
 import HttpClient from "../Axios";
-import { Movie } from "../types";
+
 import YouTube from "react-youtube";
 
 function MoviePage() {
@@ -16,7 +16,6 @@ function MoviePage() {
     // const [movie, setMovie] = useState<Movie|undefined>(undefined);
     const [trailer, setTrailer] = useState();
     const [releaseYear, setReleaseYear] = useState();
-    const [film, setFilm] = useState(null);
 
     useEffect(() => {
         async function fetch() {
@@ -62,7 +61,6 @@ function MoviePage() {
 
     console.log(movie);
 
-    
     return (
         <div className="moviePage">
             <div className="moviePage-info row align-items-center ">

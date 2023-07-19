@@ -1,10 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
-import { selectUser } from "../state/userSlice";
+import { useDispatch } from "react-redux";
+
 import "./SearchPage.css";
 import { toggleSearch } from "../state/searchSlice";
 import HttpClient from "../Axios";
 import { Api_Key } from "../Requests";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 interface props {

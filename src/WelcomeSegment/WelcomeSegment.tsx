@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./WelcomeSegment.css"
 function WelcomeSegment() {
     return (

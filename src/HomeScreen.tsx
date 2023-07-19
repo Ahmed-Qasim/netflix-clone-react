@@ -1,12 +1,7 @@
-import React, { useState } from "react";
-import Nav from "./NavBar/Nav";
 import "./HomeScreen.css";
 import Banner from "./Banner/Banner";
 import Row from "./Row/Row";
 import requests from "./Requests";
-import SearchPage from "./SearchPage/SearchPage";
-import { selectSearchState, toggleSearch } from "./state/searchSlice";
-import { useSelector } from "react-redux";
 
 function HomeScreen() {
     return (

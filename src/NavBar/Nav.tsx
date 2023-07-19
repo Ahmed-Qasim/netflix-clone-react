@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import "./Nav.css";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { logout, selectUser } from "../state/userSlice";
+import {  NavLink, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../state/userSlice";
 import { auth } from "../fireBase";
-import { selectSearchState, toggleSearch } from "../state/searchSlice";
+import {  toggleSearch } from "../state/searchSlice";
 
 function Nav() {
     
@@ -17,7 +17,7 @@ function Nav() {
 
     const [scrolled, setScroll] = useState(false);
 
-    const user = useSelector(selectUser);
+    // const user = useSelector(selectUser);
 
     const navigate = useNavigate();
 
