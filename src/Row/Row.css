@@ -16,7 +16,7 @@
 .row-posters::-webkit-scrollbar {
     display: none;
 }
-.posters-container .row-poster {
+.row-posters .row-poster {
     height: 100px;
     object-fit: cover;
     transition: all 450ms;
@@ -37,7 +37,7 @@
     margin-right: 50px;
 } */
 
-.row-posterLarge {
+.row-posters .row-posterLarge {
     height: 250px;
     width: 300px;
 }
