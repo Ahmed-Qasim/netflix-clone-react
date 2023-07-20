@@ -6,6 +6,7 @@ import requests from "./Requests";
 function HomeScreen() {
     return (
         <div className="homeScreen">
+            {/* home page */}
             <Banner />
             <Row
                 title="NETFLEX ORIGINALS"
