@@ -1,41 +1,46 @@
-import { useEffect, useState } from "react";
+
 import "./Banner.css";
-import HttpClient from "../Axios";
-import requests from "../Requests";
-import { Movie } from "../types";
 import { useNavigate } from "react-router-dom";
+import { useGetMoviesQuery } from "../state/ApiSlice";
 
-function Banner() {
+function Banner(props) {
     // fetch movies
-    async function fetchData() {
-        const request = await HttpClient.get(requests.fetchTrending);
+    // const [movie, setMovie] = useState<Movie | null>(null);
 
-        setMovie(
-            request.data.results[
-                Math.floor(Math.random() * request.data.results.length - 1)
-            ]
-        );
+    // useEffect(() => {
+    //     if (!isLoading && trendingMovies) {
+    //         setMovie(
+    //             trendingMovies?.results[
+    //                 Math.floor(
+    //                     Math.random() * trendingMovies?.results.length - 1
+    //                 )
+    //             ]
+    //         );
+    //     }
+    // }, [isLoading, trendingMovies]);
 
-        return request;
-    }
+    const { data: trendingMovies, isLoading } = useGetMoviesQuery(props.fetchUrl);
+
+    const navigate = useNavigate();
 
     function truncate(string: string, n: number) {
         return string.length > n ? string.substring(0, n - 1) + "..." : string;
     }
-    const [movie, setMovie] = useState<Movie | null>(null);
-
-    useEffect(() => {
-        fetchData();
-    }, []);
-
-    const navigate = useNavigate();
-
+    //navigate to movie page
     const handleClick: React.MouseEventHandler<HTMLImageElement> = (e) => {
         e.preventDefault();
         const movieId = Number(e.currentTarget.getAttribute("data-movie-id"));
 
         navigate(`/movie/${movieId}`);
     };
+
+    if (isLoading || !trendingMovies) {
+        return <div>Loading...</div>;
+    }
+    const randomIndex = Math.floor(
+        Math.random() * trendingMovies.results.length
+    );
+    const movie = trendingMovies?.results[randomIndex];
 
     return (
         <div

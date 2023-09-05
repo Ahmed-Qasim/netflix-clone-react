@@ -6,11 +6,13 @@ function ErrorPage() {
     console.error(error);
     return (
         <div id="error-page" className="center">
-            <h1>Oops!</h1>
-            <p>Sorry, an unexpected error has occurred.</p>
-            <p>
-                <i>{error.statusText || error.message}</i>
-            </p>
+            <div className="content">
+                <h1>Oops!</h1>
+                <p>Sorry, an unexpected error has occurred.</p>
+                <p>
+                    <h2>{error.statusText || error.message}</h2>
+                </p>
+            </div>
         </div>
     );
 }

@@ -1,0 +1,21 @@
+.search-posters {
+    padding-top: 100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.search-posters .poster {
+    height: 300px;
+    width: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.error-message{
+    color: white;
+    margin-top: 100px;
+}

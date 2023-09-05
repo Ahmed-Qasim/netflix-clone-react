@@ -7,13 +7,14 @@ import YouTube from "react-youtube";
 
 function MoviePage() {
     const Api_Key = "85afc898b1eeba0994c8c54ab6e7ce1e";
+
     const imageBaseurl = "https://image.tmdb.org/t/p/original/";
+
     const { movieId } = useParams();
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [movie, setMovie] = useState<any | undefined>(undefined);
-    console.log("🚀 ~ file: Moviepage.tsx:14 ~ MoviePage ~ movie:", movie);
 
-    // const [movie, setMovie] = useState<Movie|undefined>(undefined);
     const [trailer, setTrailer] = useState();
     const [releaseYear, setReleaseYear] = useState();
 

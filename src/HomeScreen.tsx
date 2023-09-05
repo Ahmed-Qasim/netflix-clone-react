@@ -7,7 +7,7 @@ function HomeScreen() {
     return (
         <div className="homeScreen">
             {/* home page */}
-            <Banner />
+            <Banner fetchUrl={requests.fetchTrending} />
             <Row
                 title="NETFLEX ORIGINALS"
                 fetchUrl={requests.fetchNetflixOrlginals}

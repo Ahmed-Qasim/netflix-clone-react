@@ -13,6 +13,7 @@ function SignInScreen() {
 
     const navigate = useNavigate();
 
+
     const signIn = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
 
@@ -21,10 +22,6 @@ function SignInScreen() {
             passRef.current?.value ?? ""
         )
             .then((userAuth) => {
-                console.log(
-                    "🚀 ~ file: SignInScreen.tsx:42 ~ .then ~ userAuth:",
-                    userAuth
-                );
                 dispatch(
                     login({
                         uid: userAuth.user?.uid,
