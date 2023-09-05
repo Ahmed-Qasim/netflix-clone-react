@@ -21,14 +21,14 @@ function SignupPage() {
             emailRef.current?.value ?? "",
             passRef.current?.value ?? ""
         )
-            .then((userAuth) => {
+            .then((UserCredential) => {
                 dispatch(
                     login({
-                        uid: userAuth.user?.uid,
-                        email: userAuth.user?.email,
+                        uid: UserCredential.user?.uid,
+                        email: UserCredential.user?.email,
                     })
                 );
-                const user = userAuth.user;
+                const user = UserCredential.user;
                 return user?.updateProfile({
                     displayName: `${firstNameRef} ${lastNameRef}`,
                 });

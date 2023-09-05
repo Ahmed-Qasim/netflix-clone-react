@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Row.css";
 
-import HttpClient from "../Axios";
 import { useNavigate } from "react-router-dom";
+import { useGetMoviesQuery } from "../state/ApiSlice";
+import CircularProgress from "@mui/material/CircularProgress/CircularProgress";
 
 interface props {
     title: string;
@@ -13,16 +14,7 @@ interface props {
 function Row(props: props) {
     const imageBaseurl = "https://image.tmdb.org/t/p/original/";
 
-    const [movies, setMovies] = useState<any[] | null>([]);
-
-    useEffect(() => {
-        async function fetch() {
-            const response = await HttpClient.get(props.fetchUrl);
-            setMovies(response.data.results);
-            return response;
-        }
-        fetch();
-    }, []);
+    const { data, isLoading, isFetching } = useGetMoviesQuery(props.fetchUrl);
 
     const navigate = useNavigate();
 
@@ -33,6 +25,12 @@ function Row(props: props) {
 
         navigate(`/movie/${movieId}`);
     };
+
+    if (!data || isLoading|| isFetching) {
+        return <CircularProgress/>;
+    }
+    const movies = data.results;
+    console.log("🚀 ~ file: Row.tsx:17 ~ Row ~ movies:", movies);
 
     return (
         <div className="posters-container">

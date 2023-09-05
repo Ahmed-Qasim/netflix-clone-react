@@ -10,18 +10,25 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.7",
     "@reduxjs/toolkit": "^1.9.5",
+    "@uidotdev/usehooks": "^2.2.0",
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
     "firebase": "^9.23.0",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-query": "^3.39.3",
     "react-redux": "^8.1.0",
     "react-router-dom": "^6.12.1",
     "react-youtube": "^10.1.0",
     "redux-persist": "^6.0.0"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.197",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.57.1",

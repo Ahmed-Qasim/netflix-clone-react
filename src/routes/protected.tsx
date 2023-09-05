@@ -5,6 +5,11 @@ import { selectUser } from "../state/userSlice";
 
 const Protected = (props: PropsWithChildren) => {
     const isLoggedIn = useSelector(selectUser);
+    console.log(
+        "🚀 ~ file: protected.tsx:8 ~ Protected ~ isLoggedIn:",
+        isLoggedIn
+    );
+
     if (!isLoggedIn) {
         return <Navigate to="login" replace />;
     }

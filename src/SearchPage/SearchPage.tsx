@@ -1,11 +1,12 @@
 import { useDispatch } from "react-redux";
-
 import "./SearchPage.css";
 import { toggleSearch } from "../state/searchSlice";
-import HttpClient from "../Axios";
-import { Api_Key } from "../Requests";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSearchMoviesQuery } from "../state/ApiSlice";
+import { debounce, values } from "lodash";
+import { useDebounce } from "@uidotdev/usehooks";
+import MoviesList from "./MoviesList/MoviesList";
 
 interface props {
     title: string;
@@ -13,13 +14,11 @@ interface props {
     isLargeRow?: boolean;
 }
 
-function SearchPage(props: props) {
+function SearchPage() {
     const imageBaseurl = "https://image.tmdb.org/t/p/original/";
 
-    const [movies, setMovies] = useState<any[] | null>([]);
     const [searchQuery, setSearchQuery] = useState("");
-
-    // const searchInputRef = useRef<HTMLInputElement | null>(null);
+    const debouncedOnChange = useDebounce(searchQuery, 1000);
 
     const dispatchSearchState = useDispatch();
 
@@ -27,35 +26,11 @@ function SearchPage(props: props) {
         dispatchSearchState(toggleSearch());
     };
 
-    const navigate = useNavigate();
-
-    const handleClick: React.MouseEventHandler<HTMLImageElement> = (e) => {
-        e.preventDefault();
-        const movieId = Number(e.currentTarget.getAttribute("data-id"));
-        // const movieId = Number(movie.id);
-
-        navigate(`/movie/${movieId}`);
-    };
-
-    useEffect(() => {
-        document.body.classList.add("no-scroll");
-        async function fetch() {
-            const response = await HttpClient.get(
-                `/search/movie?query=${searchQuery}&api_key=${Api_Key}`
-            );
-            setMovies(response.data.results);
-            console.log("response", response.data.results);
-            return response;
-        }
-        fetch();
-        return () => {
-            document.body.classList.remove("no-scroll");
-        };
-    }, [searchQuery]);
-
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchQuery(event.target.value);
+        const value = event.target.value;
+        setSearchQuery(value);
     };
+
     return (
         <div className="SearchPage">
             <div className="search">
@@ -69,30 +44,25 @@ function SearchPage(props: props) {
                     <i className="bi bi-x-lg"></i>
                 </button>
             </div>
-            <div className="search-posters">
-                {movies?.map(
-                    (movie) =>
-                        ((props.isLargeRow && movie.poster_path) ||
-                            (!props.isLargeRow && movie.backdrop_path)) && (
-                            <img
-                                className={`row-poster ${
-                                    props.isLargeRow && "row-posterLarge"
-                                }`}
-                                key={movie.id}
-                                src={`${imageBaseurl}${
-                                    props.isLargeRow
-                                        ? movie.poster_path
-                                        : movie.backdrop_path
-                                }`}
-                                alt={`${movie.name}`}
-                                onClick={handleClick}
-                                data-id={movie.id}
-                            />
-                        )
-                )}
-            </div>
+
+            <MoviesList searchQuery={debouncedOnChange} />
         </div>
     );
 }
 
 export default SearchPage;
+// useEffect(() => {
+//     document.body.classList.add("no-scroll");
+//     async function fetch() {
+//         const response = await HttpClient.get(
+//             `/search/movie?query=${searchQuery}&api_key=${Api_Key}`
+//         );
+//         setMovies(response.data.results);
+//         console.log("response", response.data.results);
+//         return response;
+//     }
+//     fetch();
+//     return () => {
+//         document.body.classList.remove("no-scroll");
+//     };
+// }, [searchQuery]);

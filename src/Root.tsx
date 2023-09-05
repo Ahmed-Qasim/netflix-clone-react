@@ -1,4 +1,3 @@
-
 import Nav from "./NavBar/Nav";
 import Footer from "./Footer/Footer";
 import { Outlet } from "react-router-dom";
@@ -8,20 +7,19 @@ import { useSelector } from "react-redux";
 import { selectSearchState } from "./state/searchSlice";
 
 function Root() {
-    const showSearchState = useSelector(selectSearchState);
+    const SearchState = useSelector(selectSearchState);
 
     return (
         <>
             <Nav />
-            {showSearchState && (
-                <div className="search-overlay">
-                    <SearchPage isLargeRow title={""} fetchUrl={""} />
+            {SearchState ? (
+                <SearchPage />
+            ) : (
+                <div id="content">
+                    <Outlet />
                 </div>
             )}
 
-            <div id="content">
-                <Outlet />
-            </div>
             <Footer />
         </>
     );

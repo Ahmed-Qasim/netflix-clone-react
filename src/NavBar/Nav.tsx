@@ -8,8 +8,6 @@ import {  toggleSearch } from "../state/searchSlice";
 
 function Nav() {
     
-    // const showSearch = useSelector(state=>state?.searchSlice);
-    // console.log(showSearch);
     const dispatchSearchState = useDispatch();
     const handleSearchIconClick = () => {
         dispatchSearchState(toggleSearch());
@@ -17,7 +15,7 @@ function Nav() {
 
     const [scrolled, setScroll] = useState(false);
 
-    // const user = useSelector(selectUser);
+   
 
     const navigate = useNavigate();
 
@@ -46,11 +44,6 @@ function Nav() {
         auth.signOut();
         dispatch(logout());
     };
-    // const handleClick: React.MouseEventHandler<HTMLImageElement> = (e) => {
-    //     e.preventDefault();
-    //     navigate(`/search`);
-    // };
-
     return (
         <div className={`nav ${scrolled && "nav_black"}`}>
             <div className="nav-content">

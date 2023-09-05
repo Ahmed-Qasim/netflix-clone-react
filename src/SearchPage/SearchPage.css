@@ -1,17 +1,21 @@
 .SearchPage {
+    width: 100%;
+    padding: 50px 20px 20px 20px;
+    min-height: 100vh;
     height: 100%;
     background-color: black;
-    width: 100%;
-    display: absolute;
-    align-items: center;
+
 }
 .search {
     width: 90%;
-    position: absolute;
-    top: 10%;
-    left: 5%;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
+    position: fixed;
+    text-align: center;
     justify-content: space-around;
+    margin-bottom: 20px;
 }
 .search input {
     outline: none;
@@ -26,6 +30,14 @@
     outline: none;
 }
 
-.search-posters {
-    overflow-y: scroll;
-}
+
+/* .notFound {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    color: white;
+    height: 100px;
+    background-color: aquamarine;
+} */
